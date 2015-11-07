@@ -66,7 +66,10 @@ explicit examples, but the basic process is:
    ```
    <ProjectGuid>SOME GUID</ProjectGuid>
    ```
-   to specify that this project is an F# Project and an Extensibility Project.
+
+   to specify that the project is an F# Project and also an Extensibility
+   Project. Specifying that it is an Extensibility Project allows visual
+   editing of `vsixmanifest` and `.resx` files.
 
    See
    [INFO: List of known project type Guids](http://www.mztools.com/articles/2008/mz2008017.aspx)
@@ -78,7 +81,7 @@ explicit examples, but the basic process is:
    add:
    ```
    <StartAction>Program</StartAction>
-   <StartProgram>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe</StartProgram>
+   <StartProgram>$(DevEnvDir)devenv.exe</StartProgram>
    <StartArguments>/rootsuffix Exp</StartArguments>
    ```
    to start the VS2013 Experimental instance when debugging.
@@ -99,7 +102,7 @@ explicit examples, but the basic process is:
    <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
    ```
    This is how `source.extension.vsixmanifest` is processed and the `.vsct`
-   file is converted to `.pkgdef` and `.vsix` files.
+   file is converted to the `.pkgdef` and `.vsix` files.
 
 8. Make sure you have something that looks like this (where `[PACKAGENAME]`
    is replaced by your actual package name):
