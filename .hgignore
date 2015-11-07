@@ -1,0 +1,13 @@
+.git/
+obj/
+bin/
+packages/
+~$
+\#.+\#$
+\.ncb$
+\.suo$
+\.user$
+\.orig$
+\.vsp$
+syntax: glob
+.nuget/NuGet.exe
